@@ -1,0 +1,2 @@
+-convert input field to lower / upper case
+-play around with the serializer

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Shopping</h2>
+    <form action="/order" method="post" th:object="${order}">
+        <table>
+            <tr>
+                <td>
+                    <h3>Shipping Details</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Customer Name: </td>
+                <td><input type="text" required name="customerName" th:field="*{customerName}"></td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td><input type="text" required name="address" th:field="*{address}"></td>
+            </tr>
+            <tr>
+                <td>Notes: </td>
+                <td><input type="text" name="notes" th:field="*{notes}"></td>
+            </tr>
+            <tr>
+                <td>Date: </td>
+                <td><input type="date" name="orderDate" th:field="*{orderDate}"></td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Add Items To Cart</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Product</td>
+                <td>Quantity</td>
+            </tr>
+            <tr th:each="orderDetail, itemStat : *{orderDetails}">
+                <td><input type="text" required th:field="*{orderDetails[__${itemStat.index}__].product}"></td>
+                <td><input type="number" required th:field="*{orderDetails[__${itemStat.index}__].quantity}"></td>
+            </tr>
+        </table>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>

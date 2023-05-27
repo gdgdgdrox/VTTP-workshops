@@ -1,0 +1,17 @@
+customers -> customer_first_name, customer_last_name
+orders -> customer_id, order_date, shipped_date, shipping_fee
+products -> product_name, category
+inventory_transactions -> quantity
+
+select customer_id, order_date, shipped_date, shipping_fee, quantity
+FROM orders
+JOIN inventory_transactions
+ON orders.customer_id = inventory_transactions.customer_order_id;
+
+    private Integer id;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String city;
+    private String countryRegion;
+    private List<Order> orders;

@@ -1,0 +1,16 @@
+.table1 {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 25px 0px;
+    min-width: 700px;
+}
+
+.table1 thead tr {
+    text-align: left;
+    background-color: #009879;
+    color: white;
+}
+
+h1 {
+    color: green;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Crypto to Fiat</title>
+</head>
+<body>
+    <h1>Crypto Conversion</h1>
+    <form
+        action="#"
+        th:action="@{/convert}"
+        method="get">
+        <label for="coin">From</label>
+        <input type="text" list="coinlist" id="coin" name="from">
+        <datalist id="coinlist">
+            <option th:each="coin : ${cryptoNameAndFullName}" th:value="${coin.key}" th:text="${coin.value}">
+            </option> 
+        </datalist>
+
+        <p>To</p>
+        <div id="checkbox" th:each="fiat:${fiatCurrency}">
+            <input type="checkbox" id="fiat" name="to" th:value="${fiat}">
+            <label for="fiat" th:text="${fiat}"></label>
+        </div>
+        <input type="submit" value="convert">
+        <br><br><br><br>
+        <a href="/top10crypto">Click here for Top 10 Crypto</a>
+    </form>
+</body>
+</html>

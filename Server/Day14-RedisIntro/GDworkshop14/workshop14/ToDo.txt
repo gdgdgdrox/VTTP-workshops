@@ -1,0 +1,4 @@
+1. Return a customized error page if ID is not found [RestController / Service class]
+2. Try saving List and HashMap and retrieving them
+3. Deplyo to Heroku
+4. Change Redis from localhost to cloud Redis

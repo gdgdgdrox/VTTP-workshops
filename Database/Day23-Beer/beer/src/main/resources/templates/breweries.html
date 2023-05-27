@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breweries</title>
+</head>
+<body>
+    <h1>Breweries for <span th:text="${style}"></span></h1>
+    <table>
+        <div th:unless="${breweries.empty}">
+            <tr>
+                <td><strong>No.</strong></td>
+                <td><strong>Name</strong></td>
+                <td><strong>Address 1</strong></td>
+                <td><strong>City</strong></td>
+                <td><strong>Country</strong></td>
+                <td><strong>Website</strong></td>
+            </tr>
+            <tr th:each="brewery, iterStat : ${breweries}">
+                <td th:text="${iterStat.count}">
+                </td>
+                <td th:text="${brewery.name}">
+                </td>
+                <td th:text="${brewery.address1}">
+                </td>
+                <td th:text="${brewery.city}">
+                </td>
+                <td th:text="${brewery.country}">
+                </td>
+                <td><a th:href="${brewery.website}">link</a></td>
+            </tr>
+        </div>
+        <div th:if="${breweries.empty}">
+            <p>Sorry we couldnt find any results</p>
+        </div>
+    </table>
+</body>
+</html>

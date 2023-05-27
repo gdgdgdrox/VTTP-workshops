@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h1><strong>Your Conversion Result</strong></h1>
+    <div id="From">
+        <p>From: <span th:text="${from}"></span></p>
+    </div>
+    <div id="To">
+        <p>To: </p>
+        <ul th:each="result : ${result}">
+            <li th:text="${result.key} + ${result.value}"></li>
+        </ul>
+    </div>
+    <a href="/top10crypto">Click here for Top 10 Crypto</a>
+</body>
+</html>

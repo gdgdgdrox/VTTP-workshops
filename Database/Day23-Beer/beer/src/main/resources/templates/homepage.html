@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <form action="/style/breweries"
+        method="get">
+        <label for="style">Beer style</label>
+        <select name="style" id="style">
+            <option th:each="style:${styleList}" th:value="${style}">
+                <span th:text="${style}"></span>
+            </option>
+        </select>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

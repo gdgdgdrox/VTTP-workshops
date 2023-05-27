@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Shop all day</h2>
+    <form action="/order" method="post">
+        <div th:object="${order}">
+            <label for="name">Customer Name: </label>
+            <input id="name" type="text" name="customerName" th:field="*{customerName}">
+            <br>
+            <label for="address">Address: </label>
+            <input id="address" type="text" name="address" th:field="*{address}">
+            <br>
+            <label for="notes">Notes: </label>
+            <input id="notes" type="text" name="notes" th:field="*{notes}">
+            <br>
+            <label for="orderDate">Date: </label>
+            <input id="orderDate" type="date" name="orderDate" th:field="*{orderDate}">
+        </div>
+        <div>
+            <h2>Products</h2>
+        </div>
+        <div>
+            <label for="product">Product </label>
+            <input id="product" type="text" name="product">
+            <label for="quantity">Quantity: </label>
+            <input id="quantity" type="number" min="1" name="quantity">
+        </div>
+        <button class="add-button" type="button">add</button>
+        <br>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+<script>
+    const addBtn = document.querySelector(".add-button");
+    const html = "<div><label for=\"product\">Product </label><input id=\"product\" type=\"text\" name=\"product\"><label for=\"quantity\">Quantity: </label><input id=\"quantity\" type=\"number\" min=\"1\" name=\"quantity\">";
+    addBtn.addEventListener("click", function(){
+     addBtn.insertAdjacentHTML("beforebegin", html)
+    })
+</script>
+</html>

@@ -1,0 +1,15 @@
+Task 1 
+Write a REST endpoint that will insert 1 document (in JSON) into the data store. The end point is as follows:POST /api/boardgame
+•	If the same document already exists in database, return 400 BAD REQUEST
+•	Else, return 201 with JSON payload (success:boolean, id:<redis key>)
+
+Task 2 
+Write a REST endpoint that will retrieve a given board game. The following HTTP request performs the query: GET /api/boardgame/<boardgame id> 
+•	If boardgame exists, return 200 OK and payload as a JSON document.
+•	Else, return a 404 status and an appropriate error object. 
+
+Task 3
+Write a REST endpoint that will retrieve all saved board games
+
+Task 4
+Write a REST endpoint that updates a given board game.

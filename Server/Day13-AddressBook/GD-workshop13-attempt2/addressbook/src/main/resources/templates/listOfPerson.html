@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List</title>
+        <link th:href="@{/listOfPerson.css}" rel="stylesheet"/> 
+
+    </head>
+    <body>
+        <h1>Person List</h1>
+        <a th:href="@{showform}">Add Person</a>
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>id</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tr th:each="person:${listOfAddress}" >
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.email}"></td>
+                <td th:text="${person.id}"></td>
+                <td><a th:href="@{updateInfo}"><button>Update</button></a></td>
+                <td><a th:href="@{showform}"><button>Delete</button></a></td>
+            </tr>
+        </table>
+
+    </body>
+</html>
